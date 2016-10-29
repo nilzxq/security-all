@@ -35,12 +35,12 @@ public class SecurityAES {
 			//加密
 			// 加解密的算法/工作方式/填充方式
 			Cipher cipher=Cipher.getInstance("AES/ECB/PKCS5Padding");
-			cipher.init(cipher.ENCRYPT_MODE,key);
+			cipher.init(Cipher.ENCRYPT_MODE,key);
 			byte[] result=cipher.doFinal(src.getBytes());
 			System.out.println("jdk aes encrpt:"+Base64.encodeBase64String(result));
 			
 			//解密
-			cipher.init(cipher.DECRYPT_MODE,key);
+			cipher.init(Cipher.DECRYPT_MODE,key);
 			result=cipher.doFinal(result);
 			System.out.println("jdk aes decrpt:"+new String(result));
 		} catch (Exception e) {
@@ -66,12 +66,12 @@ public class SecurityAES {
 					//加密
 					// 加解密的算法/工作方式/填充方式
 					Cipher cipher=Cipher.getInstance("AES/ECB/PKCS5Padding");
-					cipher.init(cipher.ENCRYPT_MODE,key);
+					cipher.init(Cipher.ENCRYPT_MODE,key);
 					byte[] result=cipher.doFinal(src.getBytes());
 					System.out.println("bc aes encrpt:"+Base64.encodeBase64String(result));
 					
 					//解密
-					cipher.init(cipher.DECRYPT_MODE,key);
+					cipher.init(Cipher.DECRYPT_MODE,key);
 					result=cipher.doFinal(result);
 					System.out.println("bc aes decrpt:"+new String(result));
 				} catch (Exception e) {
